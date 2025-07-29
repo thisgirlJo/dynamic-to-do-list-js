@@ -1,0 +1,23 @@
+document.addEventListener('DOMContentLoaded', function() {
+    addButton = document.getElementById(add-task-btn);
+    taskInput = document.getElementById(task-input);
+    taskList = document.getElementById(task-list);
+
+    function addTask() {
+        taskText = taskInput.value.trim();
+        if (taskText === "") {
+            alert("Please enter a task.");
+            return;
+        }
+        var li = document.createElement('li');
+        li.textContent = taskText;
+
+        const button = document.createElement('button');
+        button.textContent = "Remove";
+        button.className = "remove-btn";
+        button.addEventListener('click', function() {
+            taskList.removeChild(li);
+        });
+
+    }
+});
