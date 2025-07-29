@@ -15,9 +15,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const button = document.createElement('button');
         button.textContent = "Remove";
         button.className = "remove-btn";
+
         button.addEventListener('click', function() {
             taskList.removeChild(li);
         });
 
+        // Append the  button to li
+        li.appendChild(button)
+
+        // Append li to taskList
+        taskList.appendChild(li)
+
+        // Clear the input field
+        taskInput.value = "";
     }
 });
